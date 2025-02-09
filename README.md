@@ -30,38 +30,12 @@ To run the application:
 poetry run tkinter_poetry_starter
 ```
 
-## Development Practices
-
-This project follows these development practices:
-- Code formatting with Black
-- Import sorting with isort
-- Linting with Pylint
-
-To run the development tools:
+To build the application:
 
 ```bash
-# Format code
-poetry run black .
-poetry run isort .
-
-# Run linting
-poetry run pylint src
+poetry run pyinstaller tkinter_poetry_starter.spec
 ```
 
-### Adding a New Package
-
-To add a new package to the project using Poetry:
-
-1. Add the package:
-   ```bash
-   poetry add package_name
-   ```
-   This will add the package to the `pyproject.toml` file and install it in the virtual environment.
-
-2. If the package is only needed for development (e.g., testing, linting), add it as a development dependency:
-   ```bash
-   poetry add --dev package_name
-   ```
 
 ### Creating Releases
 
@@ -76,10 +50,10 @@ This project uses GitHub Actions to automatically build and publish binaries whe
 2. Create and push a new tag:
    ```bash
    # Create a new tag
-   git tag v0.1.0  # Replace with your version
+   git tag v1.1.0  # Replace with your version
 
    # Push the tag to GitHub
-   git push origin v0.1.0
+   git push origin v1.1.0
    ```
 
 3. GitHub Actions will automatically:
@@ -90,45 +64,30 @@ This project uses GitHub Actions to automatically build and publish binaries whe
 To delete a tag if needed:
 ```bash
 # Delete local tag
-git tag -d v0.1.0
+git tag -d v1.1.0
 
 # Delete remote tag
-git push --delete origin v0.1.0
+git push --delete origin v1.1.0
 ```
 
-### Pre-commit Hooks
+## MIT License
 
-This project uses pre-commit hooks to ensure code quality. The hooks run:
-- black (code formatting)
-- isort (import sorting)
+Copyright (c) 2025 [Y. Siva Sai Krishna](https://github.com/ysskrishna)
 
-#### Setup
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Install dev dependencies:
-```bash
-poetry install
-```
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-2. Install pre-commit hooks:
-```bash
-poetry run pre-commit install
-```
-
-#### Usage
-
-The hooks will run automatically on every commit. There are two ways to bypass the hooks if needed:
-
-1. Skip all hooks:
-```bash
-git commit -m "your message" --no-verify
-```
-
-2. Skip specific hooks:
-```bash
-SKIP=black,isort git commit -m "your message"
-```
-
-You can also run the hooks manually on all files:
-```bash
-poetry run pre-commit run --all-files
-``` 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

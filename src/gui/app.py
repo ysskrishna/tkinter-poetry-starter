@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+import webbrowser
 from datetime import datetime
 from tkinter import ttk
 from PIL import Image, ImageTk
@@ -10,7 +11,12 @@ class TkinterPoetryStarter:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Tkinter Poetry Starter")
-        self.root.minsize(400, 300)
+        self.root.minsize(500, 300)
+        self.project_metadata = {
+            "author_name": "ysskrishna",
+            "author_linkedin": "https://linkedin.com/in/ysskrishna",
+            "github_repo_url": "https://github.com/ysskrishna/tkinter-poetry-starter"
+        }
         self.setup_window_icon()
         self.setup_styles()
         self.setup_ui()
@@ -41,6 +47,17 @@ class TkinterPoetryStarter:
             background="#ffffff",
             foreground="#34495e"
         )
+        style.configure(
+            "Link.TLabel",
+            font=("Helvetica", 10),
+            background="#ffffff",
+            foreground="#3498db"
+        )
+
+    def create_link_label(self, parent, text, url):
+        link = ttk.Label(parent, text=text, style="Link.TLabel", cursor="hand2")
+        link.bind("<Button-1>", lambda e: webbrowser.open_new(url))
+        return link
 
     def setup_ui(self):
         # Create main frame with padding and style
@@ -51,6 +68,7 @@ class TkinterPoetryStarter:
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_rowconfigure(0, weight=1)
         self.main_frame.grid_columnconfigure(0, weight=1)
+        self.main_frame.grid_rowconfigure(2, weight=1)  # Make the footer row expandable
 
         # Create time display
         self.time_label = ttk.Label(
@@ -65,6 +83,29 @@ class TkinterPoetryStarter:
             style="Date.TLabel"
         )
         self.date_label.grid(row=1, column=0)
+
+        # Create footer frame
+        footer_frame = ttk.Frame(self.main_frame, style="MainFrame.TFrame")
+        footer_frame.grid(row=2, column=0, sticky=(tk.E, tk.S), pady=(0, 0), padx=(0, 0))  # Remove padding
+
+        # Create links
+        author_link = self.create_link_label(
+            footer_frame, 
+            self.project_metadata["author_name"], 
+            self.project_metadata["author_linkedin"]
+        )
+        author_link.pack(side=tk.LEFT)
+
+        separator = ttk.Label(footer_frame, text=" | ", style="Link.TLabel")
+        separator.pack(side=tk.LEFT)
+
+        github_link = self.create_link_label(
+            footer_frame, 
+            "GitHub", 
+            self.project_metadata["github_repo_url"]
+        )
+        github_link.pack(side=tk.LEFT)
+
         self.update_time()
 
     def update_time(self):
