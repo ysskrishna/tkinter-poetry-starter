@@ -1,0 +1,1 @@
+# Tkinter Starter template with Poetry
