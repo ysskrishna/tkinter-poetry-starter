@@ -1,6 +1,66 @@
 # Tkinter Poetry Starter
 
-This is a starter template for creating a Python GUI application using Tkinter and Poetry.
+A professional template for building cross-platform desktop applications using Python's Tkinter and Poetry. This template serves as the foundation for production-ready GUI applications, as demonstrated by projects like [Directory Printer](https://github.com/ysskrishna/directory-printer) which was built using this starter.
+
+## Media
+<img src="./media/tkinter-poetry-starter.png" alt="Tkinter Poetry Starter"/>
+
+
+## Why This Template?
+
+This template was created to help developers quickly bootstrap production-quality desktop applications. It eliminates the common setup hurdles and provides a solid foundation with below features:
+
+
+## Features
+
+- **Cross-Platform Compatibility** - Runs on Windows, Linux, and macOS
+- **Automated Builds** - GitHub Actions workflow for automatic binary creation on release
+- **Developer Friendly**
+  - Pre-commit hooks for code quality
+  - Comprehensive documentation
+  - Easy-to-use commands for running and building
+- **Professional Project Structure**
+  - Uses Poetry for dependency management
+  - Organized module structure with separate core and GUI components
+  - Pre-configured development tools (Black, isort, pylint)
+- **Project Assets & Documentation**
+  - Custom application logo included
+  - Detailed changelog for version tracking
+
+
+## Project Structure
+
+```
+tkinter-poetry-starter/
+├── src/                    # Source code directory
+│   ├── assets/            # Application assets (images, icons, etc.)
+│   ├── core/              # Core business logic and utilities
+│   └── gui/               # GUI-related code and window definitions
+├── .github/               # GitHub-specific configurations
+│   └── workflows/         # CI/CD workflow definitions
+├── dist/                  # Built application binaries
+├── .gitignore            # Git ignore rules
+├── .pre-commit-config.yaml # Pre-commit hook configurations
+├── CHANGELOG.md          # Version history and changes
+├── DEVELOPMENT.md        # Development guide and instructions
+├── LICENSE              # MIT license file
+├── poetry.lock          # Lock file for dependencies
+├── pyproject.toml       # Project metadata and dependencies
+├── README.md            # Project documentation (this file)
+└── tkinter_poetry_starter.spec # PyInstaller specification file
+```
+
+### Key Files and Their Purpose
+
+- **src/core/**: Contains the core business logic, data models, and utility functions that are independent of the GUI
+- **src/gui/**: Houses all Tkinter-related code, window definitions, and UI components
+- **src/assets/**: Stores static assets like images, icons, and other resources used by the application
+- **.github/workflows/**: Contains GitHub Actions workflow files for automated builds and releases
+- **.pre-commit-config.yaml**: Defines pre-commit hooks for code quality checks (Black, isort, pylint)
+- **CHANGELOG.md**: Tracks version history and notable changes in each release
+- **DEVELOPMENT.md**: Guidelines and instructions for developers contributing to the project
+- **poetry.lock & pyproject.toml**: Poetry dependency management and project configuration files
+- **tkinter_poetry_starter.spec**: PyInstaller configuration for building standalone executables
 
 ## Installation from Source
 
