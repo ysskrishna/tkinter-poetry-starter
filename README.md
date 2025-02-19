@@ -2,6 +2,8 @@
 
 A professional template for building cross-platform desktop applications using Python's Tkinter and Poetry. This template serves as the foundation for production-ready GUI applications, as demonstrated by projects like [Directory Printer](https://github.com/ysskrishna/directory-printer) which was built using this starter.
 
+<a href="https://www.producthunt.com/posts/tkinter-poetry-starter-template?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tkinter&#0045;poetry&#0045;starter&#0045;template" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=896349&theme=light&t=1739993899720" alt="Tkinter&#0032;Poetry&#0032;Starter&#0032;Template - Kickstart&#0032;your&#0032;python&#0032;GUI&#0032;projects&#0032;with&#0032;Tkinter&#0032;&#0038;&#0032;Poetry&#0033; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 ## Media
 <img src="./media/tkinter-poetry-starter.png" alt="Tkinter Poetry Starter"/>
 
