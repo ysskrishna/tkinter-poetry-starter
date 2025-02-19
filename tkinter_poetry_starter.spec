@@ -26,7 +26,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='tkinter_poetry_starter',
+    name='tkinter-poetry-starter',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
