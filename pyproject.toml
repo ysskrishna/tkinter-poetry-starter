@@ -6,7 +6,7 @@ authors = ["ysskrishna <sivasaikrishnassk@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "src"}]
-
+repository = "https://github.com/ysskrishna/tkinter-poetry-starter"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
