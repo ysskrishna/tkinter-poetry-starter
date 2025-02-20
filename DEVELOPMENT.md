@@ -1,3 +1,71 @@
+# Development Guide
+
+## Installation from Source
+
+This project uses Poetry for dependency management. To install from source:
+
+1. Make sure you have Poetry installed:
+   ```bash
+   pip install poetry
+   ```
+
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/ysskrishna/tkinter-poetry-starter.git
+   cd tkinter-poetry-starter
+   ```
+
+3. Install dependencies:
+   ```bash
+   poetry install
+   ```
+
+## Running and Building
+
+To run the application:
+
+```bash
+poetry run tkinter_poetry_starter
+```
+
+To build the application:
+
+```bash
+poetry run pyinstaller tkinter_poetry_starter.spec
+```
+
+## Creating Releases
+
+This project uses GitHub Actions to automatically build and publish binaries when a new version tag is pushed. To create a new release:
+
+1. Update the version in `pyproject.toml`:
+   ```toml
+   [tool.poetry]
+   version = "x.y.z"  # Update this version
+   ```
+
+2. Create and push a new tag:
+   ```bash
+   # Create a new tag
+   git tag v1.1.0  # Replace with your version
+
+   # Push the tag to GitHub
+   git push origin v1.1.0
+   ```
+
+3. GitHub Actions will automatically:
+   - Build binaries for Windows, Linux, and macOS
+   - Create a new release on GitHub
+   - Attach the binaries to the release
+
+To delete a tag if needed:
+```bash
+# Delete local tag
+git tag -d v1.1.0
+
+# Delete remote tag
+git push --delete origin v1.1.0
+```
 
 ## Development Practices
 
@@ -31,8 +99,6 @@ To add a new package to the project using Poetry:
    ```bash
    poetry add --dev package_name
    ```
-
-
 
 ### Pre-commit Hooks
 
