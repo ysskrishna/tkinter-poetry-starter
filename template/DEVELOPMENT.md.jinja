@@ -1,5 +1,13 @@
 # Development Guide for {{ project_name }}
 
+## Table of Contents
+- [Quick Start](#quick-start)
+- [Code Quality Tools](#code-quality-tools)
+- [Pre-commit Hooks](#pre-commit-hooks)
+- [Managing Dependencies](#managing-dependencies)
+- [Customizing the Application Logo](#customizing-the-application-logo)
+- [Release Process](#release-process)
+
 ## Quick Start
 
 1. **Install Poetry** (if not already installed):
@@ -68,6 +76,43 @@ poetry add package_name
 ```bash
 poetry add --group dev package_name
 ```
+
+**Update all dependencies**:
+```bash
+poetry update
+```
+
+**Export dependencies to requirements.txt** (if needed):
+```bash
+poetry export -f requirements.txt --output requirements.txt
+```
+
+### Customizing the Application Logo
+
+To replace the default application logo with your own:
+
+1. **Prepare your logo**
+   - Create or prepare your logo image with these specifications:
+     - Format: PNG with transparency
+     - Size: 256x256 pixels (recommended)
+     - Filename: `logo.png`
+
+2. **Place the logo**
+   - Locate the assets directory in your project:
+     ```bash
+     {{ project_name }}/src/assets/
+     ```
+   - Replace the existing `logo.png` in this directory with your new logo
+
+3. **Verify the change**
+   - Run the application to check if the logo appears correctly:
+     ```bash
+     poetry run {{ project_name }}
+     ```
+   - If building an executable, rebuild to include the new logo:
+     ```bash
+     poetry run pyinstaller {{ project_name }}.spec
+     ```
 
 ## Release Process
 
