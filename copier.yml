@@ -1,0 +1,48 @@
+# Template configuration for Tkinter Poetry Starter
+
+# Template metadata
+_min_copier_version: "8.0.0"
+_templates_suffix: ".jinja"
+_subdirectory: template
+
+# Questions
+project_name:
+    type: str
+    help: What is the name of your project?
+    default: tkinter-poetry-starter
+    validator: >-
+        {% if not (project_name | regex_search('^[a-zA-Z][a-zA-Z0-9_-]*$')) %}
+        Project name must start with a letter and contain only letters, numbers, underscores, and hyphens
+        {% endif %}
+
+project_description:
+    type: str
+    help: Brief description of your project
+    default: A modern Tkinter application template using Poetry
+
+author_name:
+    type: str
+    help: Your full name
+    default: Your Name
+
+author_email:
+    type: str
+    help: Your email address
+    default: your.email@example.com
+    validator: >-
+        {% if not (author_email | regex_search('^[^@]+@[^@]+\.[^@]+$')) %}
+        Please enter a valid email address
+        {% endif %}
+
+
+# Additional configuration
+_exclude:
+    - "**/__pycache__"
+    - "**/.git"
+    - "**/.DS_Store"
+    - "**/node_modules"
+    - "**/.env"
+    - "**/.venv"
+    - "**/dist"
+    - "**/build"
+    - "**/.copier-answers.yml" 
