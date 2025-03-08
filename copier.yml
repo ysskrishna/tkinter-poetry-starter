@@ -18,7 +18,7 @@ project_name:
 project_description:
     type: str
     help: Brief description of your project
-    default: A modern Tkinter application template using Poetry
+    default: A modern Tkinter application starter using Poetry
 
 author_name:
     type: str

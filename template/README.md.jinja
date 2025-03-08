@@ -2,14 +2,63 @@
 
 {{ project_description }}
 
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Poetry](https://img.shields.io/badge/Poetry-1.4.0+-blue.svg)](https://python-poetry.org/)
+
 ## Features
 
-- Modern Python project structure using Poetry for dependency management
-- Clean and intuitive Tkinter-based GUI
-- Easy to customize and extend
-- PyInstaller configuration for creating standalone executables
+- **Cross-Platform Compatibility** - Runs on Windows, Linux, and macOS
+- **Automated Builds** - GitHub Actions workflow for automatic binary creation on release
+- **Developer Friendly**
+  - Pre-commit hooks for code quality
+  - Comprehensive documentation
+  - Easy-to-use commands for running and building
+- **Professional Project Structure**
+  - Uses Poetry for dependency management
+  - Organized module structure with separate core and GUI components
+  - Pre-configured development tools (Black, isort, pylint)
+- **Project Assets & Documentation**
+  - Custom application logo included
+  - Detailed changelog for version tracking
 
 ## Prerequisites
 
 - Python 3.9 or higher
-- Poetry for dependency management
+- [Poetry](https://python-poetry.org/) 1.4.0 or higher
+
+
+
+## Project Structure
+
+```
+{{ project_name }}/
+├── src/                            # Source code directory
+│   ├── assets/                     # Application assets (images, icons, etc.)
+│   ├── core/                       # Core business logic and utilities
+│   └── gui/                        # GUI-related code and window definitions
+├── .github/                        # GitHub-specific configurations
+│   └── workflows/                  # CI/CD workflow definitions
+├── dist/                           # Built application binaries
+├── .gitignore                      # Git ignore rules
+├── .pre-commit-config.yaml         # Pre-commit hook configurations
+├── CHANGELOG.md                    # Version history and changes
+├── DEVELOPMENT.md                  # Development guide and instructions
+├── pyproject.toml                  # Project metadata and dependencies
+├── README.md                       # Project documentation (this file)
+└── {{ project_name }}.spec           # PyInstaller specification file
+```
+
+
+### Key Files and Their Purpose
+
+- **src/core/**: Contains the core business logic, data models, and utility functions that are independent of the GUI
+- **src/gui/**: Houses all Tkinter-related code, window definitions, and UI components
+- **src/assets/**: Stores static assets like images, icons, and other resources used by the application
+- **.github/workflows/**: Contains GitHub Actions workflow files for automated builds and releases
+- **.pre-commit-config.yaml**: Defines pre-commit hooks for code quality checks (Black, isort, pylint)
+- **CHANGELOG.md**: Tracks version history and notable changes in each release
+- **DEVELOPMENT.md**: Guidelines and instructions for developers to setup and run the project
+- **pyproject.toml**: Project configuration file
+- **{{ project_name }}.spec**: PyInstaller configuration for building standalone executables
+
+For installation and development instructions, please see [DEVELOPMENT.md](DEVELOPMENT.md).
