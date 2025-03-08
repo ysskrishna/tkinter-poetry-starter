@@ -9,12 +9,6 @@ This project uses Poetry for dependency management. To install from source:
    pip install poetry
    ```
 
-2. Clone the repository:
-   ```bash
-   git clone https://github.com/ysskrishna/tkinter-poetry-starter.git
-   cd tkinter-poetry-starter
-   ```
-
 3. Install dependencies:
    ```bash
    poetry install
@@ -25,13 +19,13 @@ This project uses Poetry for dependency management. To install from source:
 To run the application:
 
 ```bash
-poetry run tkinter_poetry_starter
+poetry run {{ project_name }}
 ```
 
 To build the application:
 
 ```bash
-poetry run pyinstaller tkinter_poetry_starter.spec
+poetry run pyinstaller {{ project_name }}.spec
 ```
 
 ## Creating Releases

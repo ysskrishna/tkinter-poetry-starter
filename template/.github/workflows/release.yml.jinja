@@ -10,8 +10,8 @@ permissions:
 
 jobs:
   build:
-    name: Build on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Build on {% raw %}${{ matrix.os }}{% endraw %}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
@@ -24,7 +24,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
     
     - name: Install system dependencies (Ubuntu)
       if: matrix.os == 'ubuntu-latest'
@@ -46,7 +46,7 @@ jobs:
     
     - name: Build with PyInstaller
       run: |
-        poetry run pyinstaller tkinter_poetry_starter.spec
+        poetry run pyinstaller {{ project_name }}.spec
       
     - name: Verify build artifacts
       run: |
@@ -55,45 +55,45 @@ jobs:
     
     - name: Set environment variables
       run: |
-        echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-        echo "APP_NAME=tkinter-poetry-starter" >> $GITHUB_ENV
+        echo "VERSION={% raw %}${GITHUB_REF#refs/tags/}{% endraw %}" >> $GITHUB_ENV
+        echo "APP_NAME={{ project_name }}" >> $GITHUB_ENV
       shell: bash
 
     - name: Zip Windows artifacts
       if: matrix.os == 'windows-latest'
       run: |
         cd dist
-        7z a ../${{ env.APP_NAME }}-windows-${{ env.VERSION }}.zip ${{ env.APP_NAME }}.exe
+        7z a ../{% raw %}${{ env.APP_NAME }}{% endraw %}-windows-{% raw %}${{ env.VERSION }}{% endraw %}.zip {% raw %}${{ env.APP_NAME }}{% endraw %}.exe
       shell: bash
     
     - name: Zip Linux artifacts
       if: matrix.os == 'ubuntu-latest'
       run: |
         cd dist
-        zip -r ../${{ env.APP_NAME }}-linux-${{ env.VERSION }}.zip ${{ env.APP_NAME }}
+        zip -r ../{% raw %}${{ env.APP_NAME }}{% endraw %}-linux-{% raw %}${{ env.VERSION }}{% endraw %}.zip {% raw %}${{ env.APP_NAME }}{% endraw %}
       shell: bash
     
     - name: Zip macOS artifacts
       if: matrix.os == 'macos-latest'
       run: |
         cd dist
-        zip -r ../${{ env.APP_NAME }}-macos-${{ env.VERSION }}.zip ${{ env.APP_NAME }}
+        zip -r ../{% raw %}${{ env.APP_NAME }}{% endraw %}-macos-{% raw %}${{ env.VERSION }}{% endraw %}.zip {% raw %}${{ env.APP_NAME }}{% endraw %}
       shell: bash
     
     - name: Upload Windows Release Asset
       uses: softprops/action-gh-release@v1
       if: matrix.os == 'windows-latest' && startsWith(github.ref, 'refs/tags/')
       with:
-        files: ${{ env.APP_NAME }}-windows-${{ env.VERSION }}.zip
+        files: {% raw %}${{ env.APP_NAME }}{% endraw %}-windows-{% raw %}${{ env.VERSION }}{% endraw %}.zip
 
     - name: Upload Linux Release Asset
       uses: softprops/action-gh-release@v1
       if: matrix.os == 'ubuntu-latest' && startsWith(github.ref, 'refs/tags/')
       with:
-        files: ${{ env.APP_NAME }}-linux-${{ env.VERSION }}.zip
+        files: {% raw %}${{ env.APP_NAME }}{% endraw %}-linux-{% raw %}${{ env.VERSION }}{% endraw %}.zip
 
     - name: Upload macOS Release Asset
       uses: softprops/action-gh-release@v1
       if: matrix.os == 'macos-latest' && startsWith(github.ref, 'refs/tags/')
       with:
-        files: ${{ env.APP_NAME }}-macos-${{ env.VERSION }}.zip 
+        files: {% raw %}${{ env.APP_NAME }}{% endraw %}-macos-{% raw %}${{ env.VERSION }}{% endraw %}.zip 
