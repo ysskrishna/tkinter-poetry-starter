@@ -45,7 +45,7 @@ pip install copier
 
 2. Create a new project:
 ```bash
-copier copy gh:ysskrishna/tkinter-poetry-starter path/to/your/project
+copier copy gh:ysskrishna/tkinter-poetry-starter <folder_path>
 ```
 
 ## Template Options
