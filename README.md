@@ -4,6 +4,8 @@
 [![Poetry](https://img.shields.io/badge/Poetry-1.4.0+-blue.svg)](https://python-poetry.org/)
 [![Copier](https://img.shields.io/badge/Copier-8.0.0+-blue.svg)](https://copier.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/ysskrishna/tkinter-poetry-starter?label=release)](https://github.com/ysskrishna/tkinter-poetry-starter/releases)
+[![Author site](https://img.shields.io/badge/author-ysskrishna.space-informational)](https://ysskrishna.space)
 
 A [Copier](https://copier.readthedocs.io/) template for building cross-platform desktop applications using Python's Tkinter and Poetry. This template serves as the foundation for production-ready GUI applications, as demonstrated by projects like [Directory Printer](https://github.com/ysskrishna/directory-printer) which was built using this starter.
 
@@ -57,6 +59,36 @@ The template will ask for the following information:
 - `author_name`: Your full name
 - `author_email`: Your email address
 
+## Built and maintained by
+
+Tkinter Poetry Starter Template is built and maintained by:
+
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
+
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for release history.
+
+## Support
+
+If you find this project helpful:
+
+- ⭐ Star the repository
+- 🐛 [Report issues](https://github.com/ysskrishna/tkinter-poetry-starter/issues)
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
+
 ## License
 
-This template is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://ysskrishna.space">Author's site</a> •
+  <a href="https://github.com/ysskrishna/tkinter-poetry-starter/issues">Report Issues</a>
+</p>
